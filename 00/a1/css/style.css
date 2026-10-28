@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 1200px;
+  background: #ccc;
+  margin: 0 auto;
+}
+
+header {
+  background: yellow;
+  height: 100px;
+  /* width: 1200px; */
+}
+
+header h1 {
+  float: left;
+  background: blanchedalmond;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+  line-height: 100px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+nav {
+  background: purple;
+  width: 600px;
+  float: right;
+  margin-top: 30px;
+
+}
+
+nav ul li {
+  background: lightcoral;
+  width: 25%;
+  height: 40px;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+
+
+}
+
+.img {
+  background: khaki;
+  /* width: 100%; */
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+section {
+  /* width: 1200px; */
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+
+}
+article{
+  width: 400px;
+  height: 200px;
+    float: left;
+}
+article.c1 {
+  background: red;
+}
+
+article.c3 {
+  background: yellow;
+}
+
+article.c4 {
+  background: green;
+}
+
+div.logo {
+  width: 20%;
+  background: lightblue;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  float: left;
+}
+
+div.con1 {
+  width: 60%;
+  background: pink;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  float: left;
+}
+
+div.con2 {
+  width: 20%;
+  background: coral;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  float: left;
+}

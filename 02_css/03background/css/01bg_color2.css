@@ -1,0 +1,55 @@
+@charset  "utf-8" ;
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Gamja+Flower&family=Gothic+A1&family=Song+Myung&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 500px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.container ul{
+  padding: 50px;
+  border: 5px dotted #1a1a1a;  
+  background-color: lightcoral;
+}
+
+/* ul list style 다다르게 */
+.con1 ul{
+  list-style: none;
+}
+.con2 ul{
+  list-style: circle;
+}
+.con3 ul{
+  list-style: decimal;
+}
+.con4 ul{
+  list-style-position: inside;
+ 
+}
+
+/* h2폰트 다 다르게 / 백그라운드컬러 다 다르게/ 폰트컬러 선택 */
+.con1>h2{
+  font: 40px "Gothic A1", sans-serif;
+  background-color: beige;
+  color: #ccc;
+}
+.con2>h2{
+  font: 30px "Gamja Flower", sans-serif;
+  background-color: aqua;
+  color: #1a1a1a;
+}
+.con3>h2{
+  font-family: "Song Myung", serif;
+  background-color: #f0f;
+  color: gold;
+}
+.con4>h2{
+  font-family: "Dokdo", system-ui;
+  background-color: #000;
+  color: white;
+}
