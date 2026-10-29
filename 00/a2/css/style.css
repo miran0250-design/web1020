@@ -16,6 +16,7 @@ a {
 }
 
 /* layout */
+/* #256200 */
 body {
   color: #333;
 }
@@ -27,23 +28,23 @@ body {
 
 header {
   height: 100px;
-  background: #ccc;
+  background: #252121;
 }
 
 .img_slide {
   height: 300px;
-  background: #444;
+  background: #535050;
 
 }
 
 .content {
   height: 200px;
-  background: #666;
+  background: rgb(118, 118, 118);
 
 }
 
-.footer {
+footer {
   height: 100px;
-  background: #777;
+  background: rgb(208, 208, 203);
 
 }
