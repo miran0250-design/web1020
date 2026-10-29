@@ -22,6 +22,27 @@ body {
   color: #333;
 }
 
+.model{
+  position: fixed;
+  inset: 0;
+  background: rgba(1,1,1,0.6);
+  z-index: 100;
+  backdrop-filter: blur(4px);
+  display: none;
+
+}
+.model_inner{
+  width: 700px;
+  height: 500px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+#closeBtn{}
+
+
 .wrap {
   width: 1200px;
   margin: 0 auto;
