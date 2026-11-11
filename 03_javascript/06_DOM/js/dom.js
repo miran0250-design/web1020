@@ -35,7 +35,8 @@ document.querySelector('.node_manipulation .create_element').append($spanTag);
 //<div><span class="color_purple">네 안녕하세요</span></div>
 const $divTag = document.createElement('div');
 $divTag.innerHTML = `<span class="color_purple">네 안녕하세요</span>`;
-document.querySelector('.appendchild').appendchild($divTag);
+document.querySelector('.appendchild').appendChild($divTag);
+
 
 //자식 노드 삭제
 const $childTag = document.querySelector('.removechild span');
@@ -47,7 +48,7 @@ const textNode = document.createTextNode('안녕하십니까?');
 //브라우가 제공하는 가벼운 dom 컨테이너 객체 - 실제 문서트리에 직접 붙지 않고 메모리 상에서만 존재
 const $fragment = document.createDocumentFragment();
 $fragment.appendChild(textNode);
-document.querySelector('create_textnode').appendChild($fragment);
+document.querySelector('.create_textnode').appendChild($fragment);
 
 //cloneNode 노드복사
 const $originNode = document.querySelector('.clone_node');
@@ -97,4 +98,39 @@ document.querySelector('.text_content div').textContent = contentsTextContent;
 
 /* 요소의 위치와 크기를 알아내는 메서드 */
 //getBoundingClientRect -dom요소의 위치와 크기 정보를 뷰포트(현재 보이는 화면) 기준으로 반환하는 메서드 : 단위 픽셀
+const $position_width = document.querySelector('.position_width');
+const positionWidth = $position_width.getBoundingClientRect();
+console.log(positionWidth);
+console.log(positionWidth.left);
+console.log(positionWidth.top);
 
+const $jsPosition = $position_width.querySelector('.js_position');
+const $temp = document.createElement('div');
+
+$temp.innerHTML = 
+`<div>
+  $jsPosition.offsetLeft : ${$jsPosition.offsetLeft},
+  $jsPosition.offsetTop : ${$jsPosition.offsetTop},
+</div>
+<div>
+ $jsPosition.clientLeft : ${$jsPosition.clientLeft},
+ $jsPosition.clientTop : ${$jsPosition.clientTop},
+</div>
+`;
+
+$jsPosition.appendChild($temp);
+
+const $jsSize = $position_width.querySelector('.js_size');
+const $temp2 = document.createElement('div');
+
+$temp2.innerHTML =
+    `<div>
+        $jsSize.offsetWidth : ${$jsSize.offsetWidth},
+        $jsSize.offsetHeight : ${$jsSize.offsetHeight},
+    </div>
+    <div>
+        $jsSize.clientWidth :${$jsSize.clientWidth},
+        $jsSize.clientHeight : ${$jsSize.clientHeight},
+    </div>
+`;
+$jsSize.appendChild($temp2);
