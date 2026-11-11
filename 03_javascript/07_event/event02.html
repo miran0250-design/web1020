@@ -83,6 +83,24 @@
         log(`${order++} : img.load 이미지 로딩 완료`);
         log(`->원본 사이즈 : ${testImg.naturalWidth} x ${testImg.naturalHeight}`);
 
+      });
+
+      abortBtn.addEventListener('click',()=>{
+        testImg.src = ''; //src제거 -> 로딩 취소
+        log(`abortBtn 클릭 -> 이미지 로딩 취소`)
+      });
+      testImg.addEventListener('abort',()=>{
+        log(`${order++} : abort : 이미지 로딩 중단됨`)
+      });
+      reBtn.addEventListener('click',()=>{
+        testImg.src = imgSrc;
+        log('이미지 다시 추가');
+      });
+      window.addEventListener('resize',()=>{
+        log(`resize 창 크기 : ${window.innerWidth} x ${window.innerHeight}`);
+      });
+      window.addEventListener('scroll',()=>{
+        log(`window.scrollY : ${window.scrollY}`)
       })
     });//end
   </script>
