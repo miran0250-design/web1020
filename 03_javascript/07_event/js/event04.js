@@ -84,20 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   //새로고침 리셋 버튼 - 모든 pressed 클래스 제거 + 출력영역 초기화
   $refresh.addEventListener('click', () => {
     $info.textContent = '-';
