@@ -81,14 +81,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     onStart(){console.log('요요 시작')},
     onComplete(){console.log('요요 끝')},
   });
-  tl3.to('.ball',{x : 300, duration0:0.8,}).to('.ball',{y:120,duration:0.5});
+  tl3.to('.ball',{x : 300, duration:0.8,}).to('.ball',{y:120,duration:0.5});
 
 
   //4. 카드 하나씩 튀어나오는 효과
   function popCard(target){
     const t = gsap.timeline();
-    return t.form(target,{y:40,opacity:0, scale: 0.8, duration:0.4}).to(target,{
-      rotate5,yoyo:true,repeat:1,duration:0.2
+    return t.from(target,{y:40,opacity:0, scale: 0.8, duration:0.4}).to(target,{
+      rotate:5,yoyo:true,repeat:1,duration:0.2
     },'>'); //살짝 까딱
   }
 
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   //5. 기본 옵션(defalts) + 끝났을때 이벤트 (eventCallback)
   const tl4 = gsap.timeline({
-    defaults : {duration:0.45, ease: "expoScale(0.5,7,none)",},
+    defaults : {duration:0.45, ease: "expo.out",},
     scrollTrigger: {
       trigger:'.chips2',
       start: 'top 80%',
