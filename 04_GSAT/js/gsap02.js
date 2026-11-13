@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       start :'top center',//내가 잡은 요(트리거)의 맨 위 (top)브라우저 화면(viewport)의 70%지점에 닿을때 시작
       end:'bottom 90%',
       toggleActions : 'play none none reverse',
-      //??안됨
+      
     },
     repeat:2, //2번 반복
     yoyo:true, //왕복
