@@ -217,7 +217,8 @@ header .right ul li {
   background: #000;
   transition: 0.6s;
 }
-header.on .right ul li{
+
+header.on .right ul li {
   background: var(--gray-01);
   position: absolute;
   margin-top: -1px;
@@ -237,41 +238,50 @@ header.on .right ul li:nth-child(3) {
   transform: rotate(-45deg);
   right: 25%;
 }
-header .ham_menu{
+
+header .ham_menu {
   width: 100%;
   display: none;
 }
-header.on .ham_menu{
+
+header.on .ham_menu {
   display: flex;
   flex: 1;
 }
-header .container{
+
+header .container {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
 }
-header .container h2{
+
+header .container h2 {
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 1em;
 }
-header .container .all_con{
+
+header .container .all_con {
   width: 100%;
   color: var(--gray-03);
 }
-header .container .all_con .list{
+
+header .container .all_con .list {
   display: flex;
 }
-header .container .all_con .list>li{
+
+header .container .all_con .list>li {
   width: 25%;
-  border-left: 1px solid rgba(242,233,182,.22);
+  border-left: 1px solid rgba(242, 233, 182, .22);
   padding: 0 2em;
   margin: 1.5em 0;
 }
-header .container .all_con .list>li:last-child{
-  border-right: 1px solid rgba(242,233,182,.22);
+
+header .container .all_con .list>li:last-child {
+  border-right: 1px solid rgba(242, 233, 182, .22);
 }
-header .container .all_con .list>li button{
+
+header .container .all_con .list>li button {
   background: transparent;
   border: navajowhite;
   font-size: 26px;
@@ -283,6 +293,7 @@ header .container .all_con .list>li button{
   display: flex;
   position: relative;
 }
+
 header .container .all_con .list>li button::before {
   content: '';
   display: inline-block;
@@ -296,15 +307,18 @@ header .container .all_con .list>li button::before {
   transition: .3s;
 
 }
+
 header .container .all_con .list>li:hover button::before {
   width: 100%;
 }
-header .container .all_con .list>li ul{
+
+header .container .all_con .list>li ul {
   margin-top: 2em;
   line-height: 2.4;
   font-size: 16px;
 }
-header .container .all_con .list>li ul li:hover a{
+
+header .container .all_con .list>li ul li:hover a {
   color: var(--yul-brand-amber);
 }
 
@@ -329,6 +343,30 @@ main {
   width: 100%;
 }
 
+main .more {
+  display: flex;
+  height: 72px;
+  gap: 10px;
+  padding: 10px 32px;
+  border-radius: 36px;
+  background: var(--gray-00);
+  color: var(--yul-brand-ink);
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .more.boder {
+  background: transparent;
+  color: var(--gray-00);
+  border: 1px solid var(--gray-00);
+  transition: .3s;
+}
+
+main .more.boder:hover {
+  background: var(--gray-00);
+  color: var(--yul-brand-ink);
+}
+
 .main_visual {
   height: 100vh;
   background: #ccc;
@@ -337,7 +375,90 @@ main {
 
 .main_visual .inner {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_visual .swiper {
+  flex: 1;
+  width: 100%;
+  border-radius: var(--round);
   background: red;
+
+}
+
+.main_visual .swiper li {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background: no-repeat center/cover url(../img/yul-main-hero-ai-coding.png);
+}
+
+.main_visual .swiper li.slide1 {
+  background-image: url(../img/yul-main-hero-education.png);
+}
+
+.main_visual .swiper li.slide2 {
+  background-image: url(../img/yul-main-hero-design.png);
+
+}
+
+.main_visual .swiper li.slide3 {
+  background-image: url(../img/yul-main-hero-ai-coding.png);
+
+}
+
+.main_visual .swiper li.slide4 {
+  background-image: url(../img/yul-main-hero-publishing.png);
+
+}
+
+.main_visual .swiper li .txt_area {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  padding: 100px 0 100px 100px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  color: var(--gray-00);
+  text-shadow: 0 3px 24px rgba(59, 46, 23, 0.72);
+}
+
+.sub_txt {
+  color: var(--gray-02);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.txt_area .tit {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.3;
+  padding: 32px 0 38px;
+}
+
+.txt_area .txt {
+  color: var(--gray-02);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.3;
+  opacity: .9;
+}
+.txt_area .more{
+  margin-top: auto;
+}
+
+.main_visual .pager {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  background: lightcoral;
+  align-items: center;
+  justify-content: center;
+  align-self:center;
 }
 
 .info {
