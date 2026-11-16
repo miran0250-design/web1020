@@ -67,6 +67,6 @@ const infoSlide = new Swiper('.article_top .slide .swiper', {
   //자동으로 다음 슬라이드로 넘어가게 
   autoplay: {
     delay: 2500,
-    disableOnInteraction: false,
+    disableOnInteraction: false,   
   },
 });
