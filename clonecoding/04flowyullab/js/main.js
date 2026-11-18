@@ -86,10 +86,10 @@ const contentsSlide = new Swiper('.contents .swiper', {
   on:{
     //계속 같은 속도로 흐르게 linear 를 적용
     init:function(){
-      this.wrapperE1.style.transitionTimingFunction = 'linear';
+      this.wrapperEl.style.transitionTimingFunction = 'linear';
     },
     slideChangeTransitionStart:function(){
-      this.wrapperE1.style.transitionTimingFunction = 'linear';
+      this.wrapperEl.style.transitionTimingFunction = 'linear';
       
     },
   }
@@ -100,20 +100,21 @@ const blogSlide = new Swiper('.blog .swiper', {
   //각 카드 너비는 css에 맡기고 보이는 만큼 자동으로 보여줌
   slidesPerView: 'auto',
   spaceBetween: 30,
+
   loop: true,
   loopAdditionalSlides: 5,
   speed: 12000,
   autoplay: {
     delay: 0,
-    disableOnInteraction:false
+    disableOnInteraction:false,
   },
   on:{
     //계속 같은 속도로 흐르게 linear 를 적용
     init:function(){
-      this.wrapperE1.style.transitionTimingFunction = 'linear';
+      this.wrapperEl.style.transitionTimingFunction = 'linear';
     },
     slideChangeTransitionStart:function(){
-      this.wrapperE1.style.transitionTimingFunction = 'linear';
+      this.wrapperEl.style.transitionTimingFunction = 'linear';
       
     },
   }
