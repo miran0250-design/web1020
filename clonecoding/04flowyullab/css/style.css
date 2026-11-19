@@ -86,12 +86,10 @@ body.no-scroll{
 }
 body.no-scroll{
   position: fixed;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   width: 100%;
   touch-action: none;
 }
-
 .inner {
   width: clamp(1600px, 80vw, 90%);
   margin-inline: auto;
@@ -261,8 +259,7 @@ header.on .ham_menu {
 }
 
 header .container {
-  width: 100%;
-  max-width: 1300px;
+  width: min(1280px,calc(100% - 40px));
   margin: 0 auto;
 }
 
@@ -507,7 +504,7 @@ main .more.border:hover {
 
 .article_top .slide {
   max-width: 1300px;
-  width: calc(100% - 200px);
+  width: calc(100% - 210px);
   height: 80px;
 }
 
@@ -517,7 +514,6 @@ main .more.border:hover {
 
 .article_top .slide .swiper li {
   height: 100%;
-
 }
 
 .article_top .slide .swiper li a {
@@ -537,18 +533,16 @@ main .more.border:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 400;
-
 }
 
 .article_top .more span {
   font-size: 28px;
-  font-weight: 300
+  font-weight: 300;
 }
 
 .article_bottom {
   height: 900px;
   margin-top: 100px;
-
   display: flex;
   gap: 20px;
 }
@@ -560,7 +554,6 @@ main .more.border:hover {
   overflow: hidden;
   transition: .6s;
   height: 100%;
-
 }
 
 .article_bottom .box em {
@@ -585,20 +578,16 @@ main .more.border:hover {
 
 .article_bottom .box3 .txt_b {
   transform: translateY(0);
-
 }
 
 .article_bottom .box:hover .txt_b {
   transform: translateY(0);
-
 }
-
 
 .article_bottom .box .txt_b span {
   font-size: 20px;
   line-height: 1.5;
   font-weight: 500;
-
 }
 
 .article_bottom .box .txt_b a.more {
@@ -608,6 +597,7 @@ main .more.border:hover {
   margin-top: 46px;
   max-width: 180px;
 }
+
 
 .article_bottom img {
   position: absolute;
@@ -624,12 +614,12 @@ main .more.border:hover {
 
 .article_bottom .box1:hover {
   flex: 1.5;
-
 }
 
 .article_bottom .box1 p {
   font-size: 70px;
 }
+
 
 .article_bottom .box_all {
   flex: 3;
@@ -692,13 +682,11 @@ main .more.border:hover {
 
 .article_bottom .box4:hover {
   flex: 1.5 0 0;
-
 }
 
 .article_bottom .box5 {
   flex: 2;
   background: var(--yul-brand-yellow);
-
 }
 
 .article_bottom .box5 img {
@@ -711,7 +699,7 @@ main .more.border:hover {
 
 .article_bottom .box5:hover img {
   right: 40px;
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
 .motion {
@@ -724,12 +712,14 @@ main .more.border:hover {
   height: 1000px;
   display: flex;
   align-items: center;
+  z-index: 3;
+  position: relative;
 }
 
 .motion .tit b {
   font-family: var(--font-Eng2);
   font-size: 5rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--yul-brand-navy);
 }
 
@@ -739,14 +729,13 @@ main .more.border:hover {
   font-weight: 800;
   color: var(--yul-brand-orange);
   margin-bottom: 60px;
-
 }
 
 .motion .tit p {
   font-size: 36px;
   line-height: 1.3;
   font-weight: 300;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.05em;
 }
 
 .motion .tit p span {
@@ -754,49 +743,44 @@ main .more.border:hover {
   font-weight: 500;
 }
 
-.circle_box {
+.motion .circle_box {
   position: absolute;
   width: 1100px;
   height: 1100px;
   border-radius: 50%;
-  background: radial-gradient(50% 50% at 50% 50%, var(--yul-brand-orange-soft, #FFD0A3) 0%, var(--yul-brand-orange, #F28C28) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #FEC893 0%, #EB7923 100%);
   right: 0;
   top: 65%;
   animation: rotateCircle 7s infinite linear;
   transform-origin: 55% 50%;
-
 }
 
-.circle_box .circle1 {
+.motion .circle_box .circle1 {
   position: absolute;
   width: 80%;
   height: 80%;
   border-radius: 50%;
-  background: radial-gradient(50% 50% at 50% 50%, var(--yul-brand-orange-soft, #FFD0A3) 0%, var(--yul-brand-orange, #F28C28) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #FEC893 0%, #EB7923 100%);
   left: 50%;
   top: 50%;
   margin-left: -40%;
   margin-top: -40%;
   animation: rotateCircle 7s infinite linear;
   transform-origin: 45% 50%;
-
-
 }
 
-.circle_box .circle2 {
+.motion .circle_box .circle2 {
   position: absolute;
   width: 50%;
   height: 50%;
   border-radius: 50%;
-  background: radial-gradient(50% 50% at 50% 50%, var(--yul-brand-orange-soft, #FFD0A3) 0%, var(--yul-brand-orange, #F28C28) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #FEC893 0%, #EB7923 100%);
   left: 50%;
   top: 50%;
   margin-left: -25%;
   margin-top: -25%;
   animation: rotateCircle 7s infinite linear;
   transform-origin: 35% 50%;
-
-
 }
 
 @keyframes rotateCircle {
@@ -817,18 +801,18 @@ main .more.border:hover {
   text-transform: uppercase;
 }
 
-.learing {
+.learning {
   padding: 100px 0;
 }
 
-.learing ul {
+.learning ul {
   width: 100%;
   height: 700px;
   display: flex;
   gap: 20px;
 }
 
-.learing ul li {
+.learning ul li {
   position: relative;
   overflow: hidden;
   flex: 1;
@@ -842,11 +826,11 @@ main .more.border:hover {
   justify-content: space-between;
 }
 
-.learing ul li:hover {
+.learning ul li:hover {
   flex: 3;
 }
 
-.learing ul li img {
+.learning ul li img {
   position: absolute;
   left: 0;
   top: 0;
@@ -856,11 +840,11 @@ main .more.border:hover {
   transition: .3s;
 }
 
-.learing ul li:hover img {
+.learning ul li:hover img {
   opacity: .2;
 }
 
-.learing ul li h3 {
+.learning ul li h3 {
   position: relative;
   z-index: 2;
   font-size: 2rem;
@@ -868,41 +852,40 @@ main .more.border:hover {
   transform-origin: left center;
 }
 
-.learing ul li:hover h3 {
-  transform: rotate(0deg) translateY(0px);
-
+.learning ul li:hover h3 {
+  transform: rotate(0) translateY(0);
 }
 
-.learing ul li .txt {
+.learning ul li .txt {
   position: relative;
   font-size: 16px;
   display: none;
 }
 
-.learing ul li:hover .txt {
+.learning ul li:hover .txt {
   display: block;
 }
 
-.learing ul li .txt em {
+.learning ul li .txt em {
   display: block;
   font-size: 1.4em;
   font-weight: 600;
   margin-bottom: 20px;
 }
 
-.learing ul li .txt p {
+.learning ul li .txt p {
   margin-bottom: 80px;
   line-height: 1.6;
   font-weight: 200;
 }
 
-.learing ul li .txt a {
+.learning ul li .txt a {
   width: auto;
   height: 60px;
   display: inline-flex;
 }
 
-.learing ul li::after {
+.learning ul li::after {
   content: '+';
   display: flex;
   z-index: 2;
@@ -919,7 +902,7 @@ main .more.border:hover {
   align-self: flex-end;
 }
 
-.learing ul li:hover::after {
+.learning ul li:hover::after {
   display: none;
 }
 
@@ -960,7 +943,6 @@ main .more.border:hover {
   transition: transform .3s ease;
   background: var(--gray-00);
   overflow: hidden;
-
 }
 
 .con .swiper .box:hover {
@@ -995,7 +977,6 @@ main .more.border:hover {
 
 .contents .swiper .box {
   width: 500px;
-
 }
 
 .contents .swiper .box .img_box {
@@ -1015,7 +996,7 @@ main .more.border:hover {
 .contents .swiper .box .txt_box p {
   font-size: 24px;
   color: var(--gray-09);
-  font-weight: 600px;
+  font-weight: 600;
   margin-top: 10px;
   letter-spacing: -0.8px;
 }
@@ -1052,7 +1033,7 @@ main .more.border:hover {
   font-size: 24px;
   color: var(--gray-09);
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   line-height: 1.3;
   height: 60px;
 }
@@ -1060,6 +1041,7 @@ main .more.border:hover {
 .curriculum {
   padding-top: 64px;
   background-color: var(--gray-01);
+  padding-bottom: 50px;
 }
 
 .curriculum .inner {
@@ -1100,7 +1082,6 @@ main .more.border:hover {
 .curriculum .list_box {
   width: 410px;
   height: 100%;
-
 }
 
 .curriculum .badge_list {
@@ -1125,9 +1106,8 @@ main .more.border:hover {
   color: var(--yul-brand-ink);
 }
 
-
 .contact {
-  padding: 64px 0;
+  padding-bottom: 64px;
   background-color: var(--gray-01);
 }
 
@@ -1167,17 +1147,14 @@ main .more.border:hover {
 
 .contact .inner article:nth-child(2) a {
   background-image: url(../img/yul-contact-02.png);
-
 }
 
 .contact .inner article:nth-child(3) a {
   background-image: url(../img/yul-contact-03.png);
-
 }
 
 .contact .inner article:nth-child(4) a {
   background-image: url(../img/yul-contact-04.png);
-
 }
 
 .contact .inner article:nth-child(1):hover a {
@@ -1208,16 +1185,14 @@ main .more.border:hover {
 }
 
 .contact .inner article p {
-  line-height: 1.3;
+  line-height: 1.33;
 }
-
 
 footer {
   width: 100%;
-  padding: 60px 0px 100px;
+  padding: 60px 0 100px;
   background: var(--gray-09);
   color: var(--gray-00);
-
 }
 
 footer .f_top {
@@ -1232,7 +1207,7 @@ footer .f_top .logo_box {
 }
 
 footer .f_top .logo_box .logo {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   font-family: var(--font-Eng2);
   font-weight: 200;
   letter-spacing: 2px;
@@ -1250,7 +1225,6 @@ footer .f_top .btn_box {
   display: flex;
   gap: 20px;
   height: 60px;
-
 }
 
 footer .f_top .btn_box a,
@@ -1277,22 +1251,18 @@ footer .f_top button:hover {
   align-items: center;
   border-radius: 16px;
 }
-
-.select_box {
+.select_box{
   width: 240px;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-
-.select_box.on {
+.select_box.on{
   overflow: visible;
 }
-
-.select_box button {
-  border: 0;
-  width: 100%;
-  height: 100%;
+.select_box button{
+  border:0;
+  width: 100%; height: 100%;
   padding: 0 1.1rem;
   display: flex;
   justify-content: space-between;
@@ -1304,16 +1274,14 @@ footer .f_top button:hover {
   border-radius: 16px;
   overflow: hidden;
 }
-
-.select_box.on button img {
+.select_box.on button img{
   display: block;
   transform: rotate(180deg);
 }
-
-.select_box ul {
+.select_box ul{
   position: absolute;
   left: 0;
-  bottom: -220px;
+  bottom: -226px;
   width: 100%;
   height: 220px;
   margin-bottom: 6px;
@@ -1323,32 +1291,25 @@ footer .f_top button:hover {
   opacity: 0;
   transition: .1s;
 }
-
-
-
-.select_box.on ul {
+.select_box.on ul{
   bottom: 60px;
   opacity: 1;
 }
-
-.select_box ul li {
+.select_box ul li{
   flex: 1;
 }
-
-.select_box ul li:nth-child(2) {
+.select_box ul li:nth-child(2){
   border-top: 1px solid #2a2a2a;
   border-bottom: 1px solid #2a2a2a;
 }
-
-.select_box ul li a {
+.select_box ul li a{
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
 }
-
-.top a {
+.top a{
   width: 100px;
   height: 100%;
   display: flex;
@@ -1356,18 +1317,15 @@ footer .f_top button:hover {
   align-items: center;
   border-radius: 16px;
   padding: 0 20px;
-
 }
-
 footer .f_bottom {
   margin-top: 80px;
   display: flex;
   justify-content: space-between;
   color: var(--gray-07);
   line-height: 1.6;
-  letter-spacing: -0.5;
+  letter-spacing: -0.5px;
   font-size: 16px;
-
 }
 
 footer .f_bottom strong,

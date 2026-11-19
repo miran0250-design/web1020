@@ -6,29 +6,29 @@ document.getElementById('ham_menu').addEventListener('click', function () {
   document.querySelector('html,body').classList.toggle('no-scroll');
 });
 
-let scrollLockY=0;
+let scrollLockY = 0;
 const setScrollLocked = (isLocked) => {
-  if(isLocked){
+  if (isLocked) {
     //지금 보고 있는 스트롤 위치를 기억합니다
     scrollLockY = window.scrollY;
   }
 }
 //직전 스크롤 위치 - 지금 위치와 비교해서 사용자가 아래로 내리는지 위로 올리는지 판단
-let lastScrollY =  window.scrollY;
+let lastScrollY = window.scrollY;
 
-window.addEventListener('scroll',()=>{
-//현재 스크롤 위치
-const currentScrollY = window.scrollY;
-/* console.log(currentScrollY) */
+window.addEventListener('scroll', () => {
+  //현재 스크롤 위치
+  const currentScrollY = window.scrollY;
+  /* console.log(currentScrollY) */
 
-//지금 위치가 직전위치보다 크면 아래로 스크롤중
-if(currentScrollY>lastScrollY){
-  header.style.top = '-100px'
-}else{
+  //지금 위치가 직전위치보다 크면 아래로 스크롤 중
+  if (currentScrollY > lastScrollY) {
+    header.style.top = '-100px'
+  } else {
     header.style.top = 0
-}
-// 다음 스크롤때 비교할 수 있도록 지금위치 저장
-lastScrollY = currentScrollY;
+  }
+  // 다음 스크롤때 비교할 수 있도록 지금위치 저장
+  lastScrollY = currentScrollY;
 
 });
 
@@ -49,7 +49,7 @@ const mainSlide = new Swiper('.main_visual .swiper', {
     prevEl: '.main_visual .left',
   },
 });
-
+   
 //메인 슬라이드의 재생/일시정지 버튼
 const toggleBtn = document.querySelector('.btn_box span');
 
@@ -110,20 +110,38 @@ const contentsSlide = new Swiper('.contents .swiper', {
   speed: 9000,
   autoplay: {
     delay: 0,
-    disableOnInteraction:false
+    disableOnInteraction: false
   },
-  on:{
+    breakpoints: {
+    0: {
+      speed: 6500,
+      spaceBetween: 16,
+    },
+    501: {
+      speed: 7200,
+      spaceBetween: 20,
+    },
+    769: {
+      speed: 8200,
+      spaceBetween: 24,
+    },
+    1161: {
+      speed: 9000,
+      spaceBetween: 30,
+    },
+  },
+  on: {
     //계속 같은 속도로 흐르게 linear 를 적용
-    init:function(){
+    init: function () {
       this.wrapperEl.style.transitionTimingFunction = 'linear';
     },
-    slideChangeTransitionStart:function(){
+    slideChangeTransitionStart: function () {
       this.wrapperEl.style.transitionTimingFunction = 'linear';
-      
+
     },
   }
 });
-  
+
 //blog 영역에 가로 자동 슬라이드
 const blogSlide = new Swiper('.blog .swiper', {
   //각 카드 너비는 css에 맡기고 보이는 만큼 자동으로 보여줌
@@ -135,21 +153,59 @@ const blogSlide = new Swiper('.blog .swiper', {
   speed: 12000,
   autoplay: {
     delay: 0,
-    disableOnInteraction:false,
+    disableOnInteraction: false,
   },
-  on:{
+  //화면 크기별로 카드 사이 간격과 흐르는 속도를 바꿉니다
+  breakpoints: {
+    0: {
+      speed: 6500,
+      spaceBetween: 16,
+    },
+    501: {
+      speed: 9000,
+      spaceBetween: 20,
+    },
+    769: {
+      speed: 10500,
+      spaceBetween: 24,
+    },
+    1161: {
+      speed: 12000,
+      spaceBetween: 30,
+    },
+  },
+  on: {
     //계속 같은 속도로 흐르게 linear 를 적용
-    init:function(){
+    init: function () {
       this.wrapperEl.style.transitionTimingFunction = 'linear';
     },
-    slideChangeTransitionStart:function(){
+    slideChangeTransitionStart: function () {
       this.wrapperEl.style.transitionTimingFunction = 'linear';
-      
+
     },
   }
 });
 
-document.querySelector('.select_box button').addEventListener('click',()=>{
+//화면 크기가 바뀌면 카드 너비와 슬라이드 위치가 달라집니다.
+//그래서 swiper 에게 다시 계산해 라고 알려주는 함수
+const updateResponsiveSlides = () =>{
+  [mainSlide,infoSlide,contentsSlide,blogSlide].forEach((slide)=>{
+    slide.update();
+  })
+}
+
+//리사이즈 중에는 계산을 계속하지 않고 , 잠깐 멈춘뒤 한번만 계산합니댜
+let resizeTimer;
+window.addEventListener('resize',()=>{
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(updateResponsiveSlides,120);
+})
+
+
+
+
+
+document.querySelector('.select_box button').addEventListener('click', () => {
   document.querySelector('.select_box').classList.toggle('on');
 });
-  
+
